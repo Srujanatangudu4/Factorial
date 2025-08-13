@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'java TestFactorial.java'
+                bat 'java TestFactorial'
             }
         }
         stage('Run') {
             steps {
-                bat 'java Factorial.java'
+                bat 'java Factorial'
             }
         }
         stage('Package JAR') {
