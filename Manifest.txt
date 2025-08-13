@@ -1,1 +1,1 @@
-Main-class:Factorial
+Main-Class:Factorial
