@@ -10,7 +10,8 @@ public class TestFactorial{
 			System.out.println("All test cases passed");
 		}
 		catch(Exception e){
-			System.out.println("Test Failed :"+e.getMessage());
+			System.out.println("Test cases Failed :"+e.getMessage());
 		}
 	}
+
 }
