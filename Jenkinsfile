@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-              bat 'javac Factorial.java TestFactorial.java'
+                bat 'javac Factorial.java TestFactorial.java'
             }
         }
         stage('Test') {
@@ -19,21 +19,22 @@ pipeline {
         }
         stage('Package JAR') {
             steps {
-                bat 'jar cfm Factorial.jar Manifest.txt Factorial.class'
+                bat 'jar cfm Factorial.jar Manifest.txt Factorial.class TestFactorial.class'
             }
         }
         stage('Archive JAR') {
             steps {
-                archiveArtifacts artifacts : 'Factorial.jar'
+                archiveArtifacts artifacts: 'Factorial.jar'
             }
         }
-        post{
-          success{
-            echo 'Build,test,run and JAR creation successful and artifact is ready!'
-          }
-          failure{
+    }
+
+    post {
+        success {
+            echo 'Build, test, run, and JAR creation successful and artifact is ready!'
+        }
+        failure {
             echo 'Build or test failed'
-          }
         }
     }
 }
