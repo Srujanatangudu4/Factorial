@@ -1,6 +1,6 @@
 public class Factorial {
     public static long compute(int n) {
-        if (n < 0) throw new IllegalArgumentException("Negative numbers are not allowed");
+        if (n < 0) throw new IllegalArgumentException("Number cannot be negative");
         long result = 1;
         for (int i = 2; i <= n; i++) {
             result *= i;
@@ -13,4 +13,5 @@ public class Factorial {
         System.out.println("Factorial of " + n + " is " + compute(n));
     }
 }
+
 
